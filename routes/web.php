@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::get('users/',[UserController::class, 'index'] );
 Route::get('users/create',[UserController::class, 'create'] );
 Route::get('users/{id}',[UserController::class, 'show'] );
 Route::post('users/',[UserController::class, 'store'] );
+
+Route::get('clients/',[ClientController::class, 'index']);
+Route::get('clients/{id}',[ClientController::class, 'show']);
 /*
 Route::get('correcto', function () {
    echo "Hola";
