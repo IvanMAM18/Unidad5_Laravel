@@ -18,6 +18,9 @@ use App\Http\Controllers\ClientController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('saludo', function(){
+    echo "Hola";
+});
 Route::get('users/',[UserController::class, 'index'] );
 Route::get('users/create',[UserController::class, 'create'] );
 Route::get('users/{id}',[UserController::class, 'show'] );
@@ -29,9 +32,7 @@ Route::get('clients/{id}',[ClientController::class, 'show']);
 Route::get('correcto', function () {
    echo "Hola";
 });
-Route::get('saludo', function(){
-    echo "Hola";
-});
+
 Route::get('saludo/{name}', function($name){
     echo "Hola ".$name;
 });
