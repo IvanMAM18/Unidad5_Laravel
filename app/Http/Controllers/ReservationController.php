@@ -46,7 +46,7 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        return Reservation::with('clients')->find($id);
+        return Reservation::with('client')->find($id);
     }
 
     /**
