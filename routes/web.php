@@ -31,6 +31,7 @@ Route::get('clients/',[ClientController::class, 'index']);
 Route::get('clients/{id}',[ClientController::class, 'show']);
 
 Route::get('reservations/',[ReservationController::class, 'index']);
+Route::get('reservations/{id}',[ReservationController::class, 'show']);
 /*
 Route::get('correcto', function () {
    echo "Hola";
