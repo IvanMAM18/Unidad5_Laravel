@@ -16,6 +16,7 @@
             <td>name</td>
             <td>email</td>
             <td>phone_nomber</td>
+            <td>acciones</td>
         </tr>
         <tbody>
             @foreach ($clients as $client)
@@ -31,6 +32,11 @@
                     </td>
                     <td>
                         {{$client->phone_number}}
+                    </td>
+                    <td>
+                        <a href="{{ url('/clients/edit',$client->id) }}">
+                            Editar
+                        </a>
                     </td>
                 </tr>
             @endforeach
