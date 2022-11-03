@@ -25,7 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$request['name'] = $request['name']."H";
+        $client = Client::create($request->all());
+        /*$client = new Client();
+        $client->name = $request->name;
+        $client->name = $request->email;
+        $client->name = $request->phone_number;
+        $client-> save();*/
+        return $client;
     }
 
     /**
