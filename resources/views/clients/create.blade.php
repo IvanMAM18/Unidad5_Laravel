@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form method="post" action="http://127.0.0.1:8000/clients">
+    <form method="post" action="http://127.0.0.1:8000/clients/">
         @csrf
         <label>Name</label>
         <input typw="text" placeholder="name" name="name">
