@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
+
     <h1>
-        @if(Auth::user())
-            {{Auth::user()->name}}
+        {{-- {{ Auth::User()?->name }} --}}
+        {{-- {{ isset(Auth::User()->name)? Auth::User()->name:"No login" }} --}}
+        @if (Auth::user())
+            {{ Auth::user()->name }}
         @endif
     </h1>
-    <form method="post" action="{{ url('login')}}">
- 
+
+    <form method="POST" action=" {{ url('login/') }} ">
         @csrf
-        
-        <label>Email</label>
-        <input typw="text" name="email" value="{{ $client->email }}">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="email@fake.com">
         <br>
-        <label>Password</label>
-        <input typw="password"  name="phone_number" value="{{ $client->phone_number }}">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="* * * * * *">
         <br>
-        <input typw="hidden"  name="id" value="{{ $client->id }}">
-        <button type="submit">
-            Acceder
-        </button>
+
+        <button type="submit">Iniciar sesión</button>
+
     </form>
 </body>
 </html>
